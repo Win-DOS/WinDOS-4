@@ -33,29 +33,23 @@ timeout 2 >NUL
 :login
 echo Checking verification...
 timeout 4 >NUL
-IF EXIST "C:\Users\%username%\WinDOS-4.2\verfication.mark" goto mainscr ELSE goto setverify
-:login
+IF EXIST "C:\Users\%username%\WinDOS-4.2\verfication.mark" (goto mainscr) ELSE goto setverify
+:setverify
 cls
 echo ███████████████████████████████
 echo ██████████  Set up  ███████████   
 echo ███████████████████████████████
 echo ███████████████████████████████
 echo ███████████████████████████████
-echo Please type your password here
+echo Please type your password here:
 echo ███████████████████████████████
 set/p pass=
 if %pass%==%pass% goto saveverification
-echo ███████████████████████████████
-echo ████Type your username here████
-echo ███████████████████████████████
-set /p username=
-if %username%==%username% goto saveverification
 :saveverification
 cd C:
-cd "Users\%username%\WinDOS-4.2"
+cd "Users\%username%\WinDOS 4.2"
 echo > verification.mark
 echo Password: %pass% >> verification.mark
-echo Username: %username% >> verification.mark
 pause
 exit
 :mainscr
