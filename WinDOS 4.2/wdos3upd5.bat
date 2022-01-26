@@ -1,12 +1,12 @@
-:: A new update for WinDOS 3.4
+:: WinDOS 4.2
 ::
-:: WinDOS3 Update 55
+:: WinDOS 4.2
 :: Contributed by TartSoft (duongletrieu)
 :: Made In Hanoi, VN
 ::
 :: This Program is under GNU General Public License. To see
 :: the license go to this link:
-:: https://github.com/TartSoft/WDOS-3.5/blob/main/LICENSE.md
+:: https://github.com/TartSoft/WDOS-4/blob/main/LICENSE.md
 ::
 @echo off 
 color 02
@@ -31,20 +31,33 @@ echo Loading Updater...
 call start selfupd.bat
 timeout 2 >NUL
 :login
+echo Checking verification...
+timeout 4 >NUL
+IF EXIST "C:\Users\%username%\WinDOS-4.2\verfication.mark" goto mainscr ELSE goto setverify
+:login
 cls
-echo  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-echo        Login:     
-echo  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-echo.
-echo ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-echo Please type your password here:
-echo ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+echo ███████████████████████████████
+echo ██████████  Set up  ███████████   
+echo ███████████████████████████████
+echo ███████████████████████████████
+echo ███████████████████████████████
+echo Please type your password here
+echo ███████████████████████████████
 set/p pass=
-if %pass%==183456 goto mainscr
-if not %pass%==%pass% goto error
-:error
-msg * Your password is not correct. Please try again
-goto login
+if %pass%==%pass% goto saveverification
+echo ███████████████████████████████
+echo ████Type your username here████
+echo ███████████████████████████████
+set /p username=
+if %username%==%username% goto saveverification
+:saveverification
+cd C:
+cd "Users\%username%\WinDOS-4.2"
+echo > verification.mark
+echo Password: %pass% >> verification.mark
+echo Username: %username% >> verification.mark
+pause
+exit
 :mainscr
 cls
 echo ████████████████████████████████████
