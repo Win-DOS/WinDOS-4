@@ -2,7 +2,7 @@
 color 01
 title WinDOS Updater
 echo Checking Manufacter's version's signature...
-IF EXIST "C:\Users\%username%\WinDOS 4.2\ver42.signature" msg * You are up-to-date! ELSE goto DownUpdate.
+IF EXIST "C:\Users\%username%\WinDOS 4.2\ver42.mark" msg * You are up-to-date! ELSE goto DownUpdate.
 :DownUpdate
 cls
 echo Downloading update...
