@@ -65,26 +65,29 @@ echo █████████████████████████
 echo ████         ACCESORIES         ████
 echo ████████████████████████████████████
 echo ████        1.Calculator        ████
-echo ████         2.Notepad          ████
+echo ████        2.Notepad 
+echo ████        3.Screenshot
 echo ████████████████████████████████████
 echo ████           GAMES            ████
 echo ████████████████████████████████████
-echo ████       3.Deal or no Deal    ████
 echo ████       4.Snake Xenzia       ████
 echo ████       5.Miesweeper         ████
 echo ████████████████████████████████████
-echo ████      [TYPE 5] SHUTDOWN     ████
+echo ████      [TYPE 6] SHUTDOWN     ████
 echo ████████████████████████████████████
 set /p input=                       
 if %input%==1 goto calc 
 if %input%==2 goto notepad
-if %input%==3 goto snake
-if %input%==4 goto minesweeper
-if %input%==5 goto exit
+if %input%==3 goto screenshot
+if %input%==4 goto snake
+if %input%==5 goto minesweeper
+if %input%==6 goto exit
 :calc
 call start calc.bat
 :notepad
 call start notepad.bat
+:screenshot
+call start scrshot.vbs
 :snake
 call start snakexz.bat
 :minesweeper
