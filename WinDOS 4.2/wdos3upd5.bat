@@ -65,8 +65,8 @@ echo █████████████████████████
 echo ████         ACCESORIES         ████
 echo ████████████████████████████████████
 echo ████        1.Calculator        ████
-echo ████        2.Notepad 
-echo ████        3.Screenshot
+echo ████        2.Notepad           ████                                                  
+echo ████        3.Screenshot        ████
 echo ████████████████████████████████████
 echo ████           GAMES            ████
 echo ████████████████████████████████████
