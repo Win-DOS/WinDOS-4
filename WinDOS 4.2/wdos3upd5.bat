@@ -73,24 +73,22 @@ echo ████       3.Deal or no Deal    ████
 echo ████       4.Snake Xenzia       ████
 echo ████       5.Miesweeper         ████
 echo ████████████████████████████████████
-echo ████      [TYPE 7] SHUTDOWN     ████
+echo ████      [TYPE 5] SHUTDOWN     ████
 echo ████████████████████████████████████
 set /p input=                       
 if %input%==1 goto calc 
 if %input%==2 goto notepad
-if %input%==3 goto dealornodeal
-if %input%==4 goto snake
-if %input%==5 goto minesweeper
-if %input%==7 goto exit
+if %input%==3 goto snake
+if %input%==4 goto minesweeper
+if %input%==5 goto exit
 :calc
 call start calc.bat
 :notepad
 call start notepad.bat
-:dealornodeal
-call start dealornodeal.bat
 :snake
 call start snakexz.bat
 :minesweeper
 call start minesweeper.bat
 :exit
-call start startmn.bat
+timeout 10
+exit
